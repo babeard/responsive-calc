@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Responsive Calculator! 🔥</title>
+    <style>
+        .button-pad {
+            display: grid;
+            /* height: 200px; */
+            /* width: 200px; */
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-areas: 
+                "clearentry clear delete divide"
+                "seven eight nine multiply"
+                "four five six subtract"
+                "one two three add"
+                "invert zero decimal calculate";
+            grid-gap: 3px;
+        }
+
+        .button-pad .button {
+            justify-self: stretch;
+            align-self: stretch;
+            border: 1px solid black;
+            
+            /* center the button contents */
+            display: grid;
+            justify-items: center;
+            align-items: center;
+        }
+
+        [data-button='zero'] { grid-area: zero; }
+        [data-button='one'] { grid-area: one; }
+        [data-button='two'] { grid-area: two; }
+        [data-button='three'] { grid-area: three; }
+        [data-button='four'] { grid-area: four; }
+        [data-button='five'] { grid-area: five; }
+        [data-button='six'] { grid-area: six; }
+        [data-button='seven'] { grid-area: seven; }
+        [data-button='eight'] { grid-area: eight; }
+        [data-button='nine'] { grid-area: nine; }
+        [data-button='decimal'] { grid-area: decimal; }
+        [data-button='add'] { grid-area: add; }
+        [data-button='subtract'] { grid-area: subtract; }
+        [data-button='divide'] { grid-area: divide; }
+        [data-button='multiply'] { grid-area: multiply; }
+        [data-button='calculate'] { grid-area: calculate; }
+        [data-button='delete'] { grid-area: delete; }
+        [data-button='clear'] { grid-area: clear; }
+        [data-button='clearentry'] { grid-area: clearentry; }
+        [data-button='invert'] { grid-area: invert; }
+    
+    </style>
+</head>
+<body>
+    <div class="display"></div>
+    <div class="button-pad">
+        <div class="button" data-button="zero">0</div>
+        <div class="button" data-button="one">1</div>
+        <div class="button" data-button="two">2</div>
+        <div class="button" data-button="three">3</div>
+        <div class="button" data-button="four">4</div>
+        <div class="button" data-button="five">5</div>
+        <div class="button" data-button="six">6</div>
+        <div class="button" data-button="seven">7</div>
+        <div class="button" data-button="eight">8</div>
+        <div class="button" data-button="nine">9</div>
+        <div class="button" data-button="decimal">.</div>
+        <div class="button" data-button="add">+</div>
+        <div class="button" data-button="subtract">-</div>
+        <div class="button" data-button="divide">&divide;</div>
+        <div class="button" data-button="multiply">&times;</div>
+        <div class="button" data-button="calculate">=</div>
+        <div class="button" data-button="delete">&#8592;</div>
+        <div class="button" data-button="clear">C</div>
+        <div class="button" data-button="clearentry">CE</div>
+        <div class="button" data-button="invert">&#177;</div>
+    </div>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Responsive Calculator! 🔥</title>
+    <title>Responsive Calculator 🔥</title>
     <style>
         body {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -88,7 +88,30 @@
         [data-button='clear'] { grid-area: clear; }
         [data-button='clearentry'] { grid-area: clearentry; }
         [data-button='invert'] { grid-area: invert; }
+        
+        @media only screen and (max-width: 400px) {
+            .calculator {
+                grid-template-columns: 3fr 3fr 3fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 0;
+                /* grid-template-areas:
+                    "display display display calculate"
+                    "seven eight nine multiply"
+                    "four five six subtract"
+                    "one two three add"
+                    "invert zero decimal divide"; */
+                grid-template-areas:
+                    "display display calculate"
+                    "eight nine divide"
+                    "six seven multiply"
+                    "four five add"
+                    "two three subtract"
+                    "zero one decimal";
+                grid-gap: 0px;
+            }
 
+            [data-button='delete'], [data-button='clear'], [data-button='clearentry'], [data-button='invert'] { display: none !important; }
+
+        }
     </style>
 </head>
 <body>
@@ -114,7 +137,19 @@
         <div class="button" data-button="clear">C</div>
         <div class="button" data-button="clearentry">CE</div>
         <div class="button" data-button="invert">&#177;</div>
-        
     </div>
+
+    <script type="text/javascript">
+        const calcNode = document.querySelector('.calculator')
+
+        calcNode.addEventListener('mousedown', (e) => {
+            
+            if (e.target.classList.contains('button')) {
+                
+                const action = e.target.dataset.button
+                console.log(action)
+            }
+        })
+    </script>
 </body>
 </html>
